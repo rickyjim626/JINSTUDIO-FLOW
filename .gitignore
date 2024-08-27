@@ -66,3 +66,9 @@ dist/
 # 依赖锁定文件（取消注释以忽略）
 # package-lock.json
 # yarn.lock
+
+# 虚拟环境和大型二进制文件
+.venv/
+*.dylib
+*.so
+*.dll
