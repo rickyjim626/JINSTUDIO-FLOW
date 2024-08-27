@@ -13,8 +13,14 @@ class Workflow:
         })
 
     def execute(self):
-        # 这里应该实现工作流的执行逻辑
-        pass
+        results = {}
+        for node_id, node in self.nodes.items():
+            inputs = {}
+            for conn in self.connections:
+                if conn['to']['node'] == node_id:
+                    inputs[conn['to']['input']] = results[conn['from']['node']]['output']
+            results[node_id] = node.process(inputs)
+        return results  # 修正：将 return 语句缩进到 execute 方法内
 
     def to_dict(self):
         return {

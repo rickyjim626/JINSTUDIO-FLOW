@@ -1,0 +1,51 @@
+{
+  "name": "jinstudio-flow",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^1.7.4",
+    "express": "^4.19.2",
+    "html-to-image": "^1.11.11",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-flow-renderer": "^9.7.4",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^8.2.0"
+  },
+  "scripts": {
+    "start:frontend": "cd frontend && npm install && npm start",
+    "start:backend": "cd backend && pip install -r requirements.txt && python app/main.py",
+    "dev": "concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "build": "cd frontend && react-scripts build",
+    "test": "cd frontend && react-scripts test",
+    "eject": "cd frontend && react-scripts eject",
+    "start": "node server.js"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "description": "## 项目概述",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
